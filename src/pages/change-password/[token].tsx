@@ -25,7 +25,7 @@ const ChangePasssword: NextPage<props> = ({ token }) => {
         onSubmit={async (values, { setErrors }) => {
           const response = await changePassword({
             newPassword: values.newPassword,
-            token,
+            token: String(router.query.token),
           });
           if (response.data?.changePassword.errors) {
             const errorMap = toErrorMap(response.data.changePassword.errors);
@@ -70,16 +70,6 @@ const ChangePasssword: NextPage<props> = ({ token }) => {
       </Formik>
     </Wrapper>
   );
-};
-
-export const getServerSideProps: GetServerSideProps = async ({
-  query: { token },
-}) => {
-  return {
-    props: {
-      token,
-    },
-  };
 };
 
 export default withUrqlClient(createUrqlClient)(ChangePasssword);
