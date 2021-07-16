@@ -46,7 +46,7 @@ const Login: React.FC<{}> = ({}) => {
                 type="password"
               />
             </Box>
-            <Flex mt="2">
+            <Flex mt={2}>
               <NextLink href="/forgot-password">
                 <Link ml="auto">Forgot password?</Link>
               </NextLink>

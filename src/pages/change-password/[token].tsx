@@ -49,7 +49,7 @@ const ChangePasssword: NextPage<props> = ({ token }) => {
             />
             {tokenError ? (
               <Flex>
-                <Box mr="2" color="red">
+                <Box mr={2} color="red">
                   {tokenError}
                 </Box>
                 <NextLink href="/forgot-password">
